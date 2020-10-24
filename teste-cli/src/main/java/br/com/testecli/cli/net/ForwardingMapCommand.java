@@ -25,6 +25,10 @@ import org.onosproject.net.HostId;
 description = "Lists the endpoints for which intents are installed")
 public class ForwardingMapCommand extends AbstractShellCommand{
 
+    @Argument(index = 0, name = "hostId", description = "Host ID of source",
+            required = false, multiValued = false)
+    private HostId hostId = null;
+    
 	@Override
 	protected void execute() {
 		// TODO Auto-generated method stub
