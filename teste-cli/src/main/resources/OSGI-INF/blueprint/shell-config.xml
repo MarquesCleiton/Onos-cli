@@ -1,0 +1,9 @@
+<command>
+    <!--Our command implementation's FQDN-->
+    <action class="br.com.testecli.cli.net.ForwardingMapCommand"/>
+    <!--A command completer for Host IDs
+    <completers>
+        <ref component-id="hostIdCompleter"/>
+        <null/>
+    </completers>-->
+</command>
