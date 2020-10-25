@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-present Open Networking Foundation
+ * Copyright 2014 Open Networking Laboratory
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,14 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.onosproject.ecord.carrierethernet.cli.commands;
+package br.com.usjt.firewallsimples;
 
-import org.apache.karaf.shell.commands.Command;
-import org.onosproject.cli.AbstractShellCommand;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
-@Command(scope = "onos", name = "Adinam-Cascavel",
-description = "um pequeno teste")
-public class Teste extends AbstractShellCommand {
-@Override
-protected void execute() {}
+/**
+ * Set of tests of the ONOS application component.
+ */
+public class AppComponentTest {
+
+    private AppComponent component;
+
+    @Before
+    public void setUp() {
+        component = new AppComponent();
+        component.activate();
+
+    }
+
+    @After
+    public void tearDown() {
+        component.deactivate();
+    }
+
+    @Test
+    public void basics() {
+
+    }
+
 }
