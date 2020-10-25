@@ -22,8 +22,7 @@
 
 	<properties>
 		<onos.version>1.2.2</onos.version>
-		<!-- Uncomment to generate ONOS app from this module. <onos.app.name>org.foo.app</onos.app.name> 
-			<onos.app.origin>Foo, Inc.</onos.app.origin> -->
+			<onos.app.origin>Firewall simples, USJT</onos.app.origin> 
 	</properties>
 
 	<dependencies>
