@@ -21,9 +21,10 @@
 	<url>http://onosproject.org</url>
 
 	<properties>
-		<onos.version>1.2.2</onos.version>
-			<onos.app.origin>Firewall simples, USJT</onos.app.origin> 
-	</properties>
+        <onos.version>1.2.2</onos.version>
+        <onos.app.name>br.com.usjt.firewallsimples</onos.app.name>
+        <onos.app.origin>USJT, UNIV</onos.app.origin>
+    </properties>
 
 	<dependencies>
 		<dependency>
