@@ -12,46 +12,24 @@
 		xmlns="http://karaf.apache.org/xmlns/shell/v1.1.0">
 		<command>
 			 <action class="br.com.usjt.firewallsimples.cli.FwDstRule_Add"/>
-			 <completers>
-                <ref component-id="networkCompleter"/>
-            </completers>
 		</command>
 		<command>
 			 <action class="br.com.usjt.firewallsimples.cli.FwDstRule_Remove"/>
-			 <completers>
-                <ref component-id="networkCompleter"/>
-            </completers>
 		</command>
 		<command>
 			 <action class="br.com.usjt.firewallsimples.cli.FwPairRule_Add"/>
-			 <completers>
-                <ref component-id="networkCompleter"/>
-            </completers>
 		</command>
 		<command>
 			 <action class="br.com.usjt.firewallsimples.cli.FwPairRule_Remove"/>
-			 <completers>
-                <ref component-id="networkCompleter"/>
-            </completers>
 		</command>
 		<command>
 			 <action class="br.com.usjt.firewallsimples.cli.FwRules_List"/>
-			 <completers>
-                <ref component-id="networkCompleter"/>
-            </completers>
 		</command>
 		<command>
 			 <action class="br.com.usjt.firewallsimples.cli.FwRules_RemoveALL"/>
-			 <completers>
-                <ref component-id="networkCompleter"/>
-            </completers>
 		</command>
 		<command>
 			 <action class="br.com.usjt.firewallsimples.cli.FwSrcRule_Add"/>
-			 <completers>
-                <ref component-id="networkCompleter"/>
-            </completers>
-            
 		</command>
 		<command>
 			 <action class="br.com.usjt.firewallsimples.cli.FwSrcRule_Remove"/>
