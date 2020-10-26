@@ -18,13 +18,27 @@ package br.com.usjt.firewallsimples.cli;
 import org.apache.karaf.shell.commands.Command;
 import org.onosproject.cli.AbstractShellCommand;
 
+import br.com.usjt.firewallsimples.app.FirewallService;
+
+import org.apache.karaf.shell.commands.Argument;
+
 @Command(scope = "proactiveFirewall", name = "fwAdd-pairRule", description = "Adicione Regra de Bloqueio para o par de IPS especificados no formato IP:[PORTA]")
 public class FwPairRule_Add extends AbstractShellCommand{
 
+	@Argument(index = 0, name = "srcIpPort", description = "Ip:[Porta] de Origem do bloqueio",
+            required = true, multiValued = false)
+    String srcIp = null;
+
+    @Argument(index = 1, name = "dstIpPort", description = "Ip:[Porta] de Destino do bloqueio",
+            required = true, multiValued = false)
+    String dstIp = null;
+    
 	@Override
 	protected void execute() {
-		// TODO Auto-generated method stub
-		
+		FirewallService firewallService = get(FirewallService.class);
+        firewallService.fwAddPairRule(srcIp, dstIp);
+        print("Bloqueio criado com sucesso para o par de ips - %s <--> %s", srcIp, dstIp);
+        print("Para listar as regras existentes, por favor execute o comando fwlist-allrules");
 	}
 
 }

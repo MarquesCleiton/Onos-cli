@@ -17,15 +17,28 @@
 package br.com.usjt.firewallsimples.cli;
 
 import org.apache.karaf.shell.commands.Command;
+import br.com.usjt.firewallsimples.app.FirewallService;
 import org.onosproject.cli.AbstractShellCommand;
 
-@Command(scope="proactiveFirewall", name="fwList-AllRules", description = "Listar as regras existentes em nosso firewall")
-public class FwRules_List extends AbstractShellCommand{
+import java.util.ArrayList;
+
+import org.apache.karaf.shell.commands.Argument;
+
+@Command(scope = "proactiveFirewall", name = "fwList-AllRules", description = "Listar as regras existentes em nosso firewall")
+public class FwRules_List extends AbstractShellCommand {
 
 	@Override
 	protected void execute() {
-		// TODO Auto-generated method stub
-		
+		FirewallService firewallService = get(FirewallService.class);
+
+		ArrayList<String> list = firewallService.listAllRules();
+
+		print("Listando %s regras: ", list.size());
+		print("--------------------------------------------");
+		for (String rule : list) {
+			print(rule);
+		}
+		print("--------------------------------------------");
 	}
 
 }

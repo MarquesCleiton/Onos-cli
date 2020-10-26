@@ -16,15 +16,33 @@
 package br.com.usjt.firewallsimples.cli;
 
 import org.apache.karaf.shell.commands.Command;
+import br.com.usjt.firewallsimples.app.FirewallService;
 import org.onosproject.cli.AbstractShellCommand;
+import org.apache.karaf.shell.commands.Argument;
 
 @Command(scope = "proactiveFirewall", name = "fwAdd-srcRule", description = "Adicione Regra de Bloqueio para a origem especificada - IP/[PORTA]")
-public class FwSrcRule_Add extends AbstractShellCommand{
+public class FwSrcRule_Add extends AbstractShellCommand {
+
+	// Os argumentos indicam os parametros do comando. Index 0 é o primeiro
+	// parametro do comando
+	@Argument(index = 0, name = "srcIp", description = "Ip de Origem do Bloqueio", required = true, multiValued = false)
+	String srcIp = null;
+
+	// Os argumentos indicam os parametros do comando. O argumento required=false
+	// indica que o parametro é opcional
+	@Argument(index = 1, name = "srcPort", description = "Porta a ser bloqueada [opcional]", required = false, multiValued = false)
+	String srcPort = null;
 
 	@Override
 	protected void execute() {
-		// TODO Auto-generated method stub
-		
+		FirewallService firewallService = get(FirewallService.class);
+		// Executa a funçao responsavel por adicionar a regra no Firewall e criar o
+		// bloqueio.
+		firewallService.fwAddSrcRule(srcIp, srcPort);
+		print("Bloqueio criado com sucesso para o origem %s - A porta informada foi %s [null representa todas as portas]",
+				srcIp, srcPort);
+		print("Para listar as regras existentes, por favor execute o comando fwlist-allrules");
+
 	}
 
 }

@@ -16,15 +16,27 @@
 package br.com.usjt.firewallsimples.cli;
 
 import org.apache.karaf.shell.commands.Command;
+import br.com.usjt.firewallsimples.app.FirewallService;
 import org.onosproject.cli.AbstractShellCommand;
+import org.apache.karaf.shell.commands.Argument;
 
 @Command(scope = "proactiveFirewall", name = "fwremove-AllRules", description = "Remove todas as regras criadas pelo firewall")
-public class FwRules_RemoveALL extends AbstractShellCommand{
+public class FwRules_RemoveALL extends AbstractShellCommand {
 
 	@Override
 	protected void execute() {
-		// TODO Auto-generated method stub
-		
+		FirewallService firewallService = get(FirewallService.class);
+		/*
+		 * TODO Lab 1: Manipulando Comandos (Remover todas as Regras)
+		 *
+		 * Nao ha misterios nesse comando. Devemos apenas realizar uma chamada à
+		 * função fwRemoveAllRule() implementada em nossa classe principal
+		 * (ProactiveFirewall.java, linha 202). Após chamar a função de remoção das
+		 * regras, vá ate a linha mencionada para implementar a funcionamento do
+		 * comando.
+		 */
+		firewallService.fwRemoveAllRule();
+		print("Todas as regras do Firewall foram removidas. Nao ha bloqueios ativos.");
 	}
 
 }

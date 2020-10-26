@@ -17,14 +17,26 @@ package br.com.usjt.firewallsimples.cli;
 
 import org.apache.karaf.shell.commands.Command;
 import org.onosproject.cli.AbstractShellCommand;
+import br.com.usjt.firewallsimples.app.FirewallService;
+import org.apache.karaf.shell.commands.Argument;
 
 @Command(scope = "proactiveFirewall", name = "fwRemove-dstRule", description = "Remove Regra de Bloqueio para o destino especificada - IP/[PORTA]")
 public class FwDstRule_Remove extends AbstractShellCommand{
+	@Argument(index = 0, name = "srcIp", description = "Ip de destino do Bloqueio",
+            required = true, multiValued = false)
+    String dstIp = null;
 
+    @Argument(index = 1, name = "srcPort", description = "Porta a ser bloqueada [opcional]",
+            required = false, multiValued = false)
+    String dstPort = null;
+    
+    
 	@Override
 	protected void execute() {
-		// TODO Auto-generated method stub
-		
+		FirewallService firewallService = get(FirewallService.class);
+        firewallService.fwRemoveDstRule(dstIp, dstPort);
+        print("Bloqueio removido com sucesso para o destino %s - A porta informada foi %s [null representa todas as portas]", dstIp, dstPort);
+        print("Para listar as regras existentes, por favor execute o comando fwlist-allrules");
 	}
 
 }
