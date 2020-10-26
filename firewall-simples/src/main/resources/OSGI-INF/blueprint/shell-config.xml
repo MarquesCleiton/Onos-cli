@@ -33,11 +33,6 @@
 		</command>
 		<command>
 			 <action class="br.com.usjt.firewallsimples.cli.FwSrcRule_Remove"/>
-			 <completers>
-                <ref component-id="networkCompleter"/>
-            </completers>
 		</command>
 	</command-bundle>
-	
-	<bean id="networkCompleter" class="br.com.usjt.firewallsimples.cli.RulesCompleter"/>
 </blueprint>
