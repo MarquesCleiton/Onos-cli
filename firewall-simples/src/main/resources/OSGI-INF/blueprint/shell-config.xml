@@ -13,6 +13,7 @@
 		<command>
 			<action class="br.com.usjt.firewallsimples.cli.FwDstRule_Add" />
 		</command>
+		<!--  
 		<command>
 			<action class="br.com.usjt.firewallsimples.cli.FwDstRule_Remove" />
 		</command>
@@ -33,6 +34,6 @@
 		</command>
 		<command>
 			<action class="br.com.usjt.firewallsimples.cli.FwSrcRule_Remove" />
-		</command>
+		</command>-->
 	</command-bundle>
 </blueprint>
