@@ -26,6 +26,10 @@ public class FwDstRule_Add extends AbstractShellCommand{
             required = true, multiValued = false)
     String dstIp = null;
 
+    @Argument(index = 1, name = "dstPort", description = "Porta a ser bloqueada [opcional]",
+            required = false, multiValued = false)
+    String dstPort = null;
+
 	@Override
 	protected void execute() {
 	}
