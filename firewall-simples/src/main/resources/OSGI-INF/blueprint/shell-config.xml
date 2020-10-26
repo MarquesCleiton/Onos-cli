@@ -11,28 +11,28 @@
 	<command-bundle
 		xmlns="http://karaf.apache.org/xmlns/shell/v1.1.0">
 		<command>
-			 <action class="br.com.usjt.firewallsimples.cli.FwDstRule_Add"/>
+			<action class="br.com.usjt.firewallsimples.cli.FwDstRule_Add" />
 		</command>
 		<command>
-			 <action class="br.com.usjt.firewallsimples.cli.FwDstRule_Remove"/>
+			<action class="br.com.usjt.firewallsimples.cli.FwDstRule_Remove" />
 		</command>
 		<command>
-			 <action class="br.com.usjt.firewallsimples.cli.FwPairRule_Add"/>
+			<action class="br.com.usjt.firewallsimples.cli.FwPairRule_Add" />
 		</command>
 		<command>
-			 <action class="br.com.usjt.firewallsimples.cli.FwPairRule_Remove"/>
+			<action class="br.com.usjt.firewallsimples.cli.FwPairRule_Remove" />
 		</command>
 		<command>
-			 <action class="br.com.usjt.firewallsimples.cli.FwRules_List"/>
+			<action class="br.com.usjt.firewallsimples.cli.FwRules_List" />
 		</command>
 		<command>
-			 <action class="br.com.usjt.firewallsimples.cli.FwRules_RemoveALL"/>
+			<action class="br.com.usjt.firewallsimples.cli.FwRules_RemoveALL" />
 		</command>
 		<command>
-			 <action class="br.com.usjt.firewallsimples.cli.FwSrcRule_Add"/>
+			<action class="br.com.usjt.firewallsimples.cli.FwSrcRule_Add" />
 		</command>
 		<command>
-			 <action class="br.com.usjt.firewallsimples.cli.FwSrcRule_Remove"/>
+			<action class="br.com.usjt.firewallsimples.cli.FwSrcRule_Remove" />
 		</command>
 	</command-bundle>
 </blueprint>
