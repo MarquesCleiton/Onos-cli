@@ -17,10 +17,15 @@ package br.com.usjt.firewallsimples.cli;
 
 import org.apache.karaf.shell.commands.Command;
 import org.onosproject.cli.AbstractShellCommand;
+import org.apache.karaf.shell.commands.Argument;
 
 @Command(scope = "proactiveFirewall", name = "fwAdd-dstRule", description = "Adicione Regra de Bloqueio para o destino especificado - IP/[PORTA]")
 public class FwDstRule_Add extends AbstractShellCommand{
-	
+
+	@Argument(index = 0, name = "dstIp", description = "Ip de Destino do Bloqueio",
+            required = true, multiValued = false)
+    String dstIp = null;
+
 	@Override
 	protected void execute() {
 	}
