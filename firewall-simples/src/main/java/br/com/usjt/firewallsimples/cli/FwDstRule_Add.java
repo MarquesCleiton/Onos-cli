@@ -17,7 +17,6 @@ package br.com.usjt.firewallsimples.cli;
 
 import org.apache.karaf.shell.commands.Command;
 import org.onosproject.cli.AbstractShellCommand;
-import br.com.usjt.firewallsimples.app.FirewallService;
 import org.apache.karaf.shell.commands.Argument;
 
 @Command(scope = "proactiveFirewall", name = "fwAdd-dstRule", description = "Adicione Regra de Bloqueio para o destino especificado - IP/[PORTA]")
