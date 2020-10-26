@@ -34,10 +34,12 @@ public class FwDstRule_Add extends AbstractShellCommand{
     
 	@Override
 	protected void execute() {
+		/*
 		FirewallService firewallService = get(FirewallService.class);
         firewallService.fwAddDstRule(dstIp, dstPort);
         print("Bloqueio criado com sucesso para o destino %s - A porta informada foi %s [null representa todas as portas]", dstIp, dstPort);
         print("Para listar as regras existentes, por favor execute o comando fwlist-allrules");
+		*/
 	}
 
 }
