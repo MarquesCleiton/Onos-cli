@@ -16,14 +16,39 @@
 package br.com.usjt.firewallsimples.app;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 import org.apache.felix.scr.annotations.Component;
+import org.apache.felix.scr.annotations.Reference;
+import org.apache.felix.scr.annotations.ReferenceCardinality;
 import org.apache.felix.scr.annotations.Service;
+import org.onosproject.core.ApplicationId;
+import org.onosproject.core.CoreService;
+import org.onosproject.net.device.DeviceService;
+import org.onosproject.net.flow.FlowRuleService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 @Component(immediate = true)
 @Service
 public class ProactiveFirewall implements FirewallService{
 
+	private static Logger log = LoggerFactory.getLogger(ProactiveFirewall.class);
+
+    private static final int DROP_PRIORITY = 129;
+
+    @Reference(cardinality = ReferenceCardinality.MANDATORY_UNARY)
+    protected CoreService coreService;
+
+    @Reference(cardinality = ReferenceCardinality.MANDATORY_UNARY)
+    protected FlowRuleService flowRuleService;
+
+    @Reference(cardinality = ReferenceCardinality.MANDATORY_UNARY)
+    protected DeviceService deviceService;
+
+    private ApplicationId appId;
+  
 	@Override
 	public ArrayList<String> listAllRules() {
 		// TODO Auto-generated method stub
