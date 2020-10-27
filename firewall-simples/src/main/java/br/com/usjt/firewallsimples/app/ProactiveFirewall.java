@@ -32,9 +32,6 @@ import org.slf4j.LoggerFactory;
 
 import com.google.common.collect.HashMultimap;
 
-import proactive.firewall.app.ProactiveFirewall.BlockRecord;
-
-
 @Component(immediate = true)
 @Service
 public class ProactiveFirewall implements FirewallService{
