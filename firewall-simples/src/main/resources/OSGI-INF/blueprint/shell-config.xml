@@ -17,6 +17,11 @@
 	<command-bundle xmlns="http://karaf.apache.org/xmlns/shell/v1.1.0">
     	<command>
     		<action class="br.com.usjt.firewallsimples.cli.FwDstRule_Add"/>
+    		<completers>
+                <ref component-id="networkCompleter"/>
+            </completers>
     	</command>
     </command-bundle>
+    
+    <bean id="networkCompleter" class="br.com.usjt.firewallsimples.cli.RulesCompleter"/>
 </blueprint>
