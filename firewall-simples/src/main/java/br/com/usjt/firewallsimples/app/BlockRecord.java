@@ -17,9 +17,13 @@ package br.com.usjt.firewallsimples.app;
 
 import java.util.Objects;
 
+import com.google.common.collect.HashMultimap;
+import com.google.common.collect.Multimap;
+
 public class BlockRecord {
 	public String ip;
     public String port;
+    Multimap<BlockRecord, BlockRecord> pairBlockList = HashMultimap.create();
 
     BlockRecord(String ip, String port) {
         this.ip = ip;

@@ -60,7 +60,6 @@ public class ProactiveFirewall implements FirewallService{
   
 	@Override
 	public ArrayList<String> listAllRules() {
-		Multimap<BlockRecord, BlockRecord> pairBlockList = HashMultimap.create();
 		return null;
 	}
 
