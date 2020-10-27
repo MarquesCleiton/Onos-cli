@@ -17,6 +17,7 @@ package br.com.usjt.firewallsimples.app;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Objects;
 
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Reference;
@@ -28,6 +29,10 @@ import org.onosproject.net.device.DeviceService;
 import org.onosproject.net.flow.FlowRuleService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.google.common.collect.HashMultimap;
+
+import proactive.firewall.app.ProactiveFirewall.BlockRecord;
 
 
 @Component(immediate = true)
@@ -48,6 +53,12 @@ public class ProactiveFirewall implements FirewallService{
     protected DeviceService deviceService;
 
     private ApplicationId appId;
+    
+    private final HashSet<BlockRecord> srcBlockList = new HashSet<>();
+    private final HashSet<BlockRecord> dstBlockList = new HashSet<>();
+
+    private final HashMultimap<BlockRecord,BlockRecord> pairBlockList = HashMultimap.create();
+
   
 	@Override
 	public ArrayList<String> listAllRules() {
@@ -96,4 +107,57 @@ public class ProactiveFirewall implements FirewallService{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	
+	
+	
+	
+	private class BlockRecord {
+        private  String ip;
+        private  String port;
+
+        BlockRecord(String ip, String port) {
+            this.ip = ip;
+            this.port = port;
+        }
+
+        BlockRecord() {
+            this.ip = null;
+            this.port = null;
+        }
+
+        BlockRecord(String ip) {
+            this.ip = ip;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(ip, port);
+        }
+
+        @Override
+        public String toString() {
+
+            String record = this.ip;
+            boolean noSrcPort  = this.port == null;
+            if (!noSrcPort) {
+                return record.concat(":").concat(this.port);
+            }
+            else return record;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj == null || getClass() != obj.getClass()) {
+                return false;
+            }
+            final BlockRecord other = (BlockRecord) obj;
+            return Objects.equals(this.ip, other.ip) && Objects.equals(this.port, other.port);
+        }
+    }
+	
+	
 }
