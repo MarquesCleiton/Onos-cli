@@ -16,6 +16,7 @@
 package br.com.usjt.firewallsimples.app;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 
 import org.apache.felix.scr.annotations.Component;
@@ -57,9 +58,12 @@ public class ProactiveFirewall implements FirewallService{
     
     private final HashSet<BlockRecord> dstBlockList = new HashSet<>();
     
+    //Multimap<BlockRecord, BlockRecord> pairBlockList = HashMultimap.create();
+    private final HashMap<BlockRecord, BlockRecord> pairBlockList = new HashMap<BlockRecord, BlockRecord>();
   
 	@Override
 	public ArrayList<String> listAllRules() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
