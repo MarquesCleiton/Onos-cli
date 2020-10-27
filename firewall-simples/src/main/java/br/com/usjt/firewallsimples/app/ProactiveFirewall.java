@@ -31,6 +31,7 @@ import org.slf4j.LoggerFactory;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.SetMultimap;
+import com.google.common.collect.Multimap;
 
 @Component(immediate = true)
 @Service
@@ -56,7 +57,7 @@ public class ProactiveFirewall implements FirewallService{
     
     private final HashSet<BlockRecord> dstBlockList = new HashSet<>();
     
-    private final SetMultimap<BlockRecord, BlockRecord> pairBlockList;
+    private final Multimap<BlockRecord, BlockRecord> pairBlockList;
     
     public ProactiveFirewall() {
     	pairBlockList = HashMultimap.create();
