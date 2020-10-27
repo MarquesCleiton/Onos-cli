@@ -50,8 +50,9 @@ public class ProactiveFirewall implements FirewallService{
 
     private ApplicationId appId;
     
-    /*
+    
     private final HashSet<BlockRecord> srcBlockList = new HashSet<>();
+    /*
     private final HashSet<BlockRecord> dstBlockList = new HashSet<>();
 
     private final HashMultimap<BlockRecord,BlockRecord> pairBlockList = HashMultimap.create();
