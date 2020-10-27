@@ -54,9 +54,8 @@ public class ProactiveFirewall implements FirewallService{
     private final HashSet<BlockRecord> srcBlockList = new HashSet<>();
     
     private final HashSet<BlockRecord> dstBlockList = new HashSet<>();
-    /*
+    
     private final HashMultimap<BlockRecord,BlockRecord> pairBlockList = HashMultimap.create();
-	*/
   
 	@Override
 	public ArrayList<String> listAllRules() {
