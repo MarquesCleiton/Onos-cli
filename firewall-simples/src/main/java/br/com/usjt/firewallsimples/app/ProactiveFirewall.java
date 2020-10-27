@@ -30,6 +30,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.google.common.collect.HashMultimap;
+import com.google.common.collect.SetMultimap;
 
 @Component(immediate = true)
 @Service
@@ -55,7 +56,7 @@ public class ProactiveFirewall implements FirewallService{
     
     private final HashSet<BlockRecord> dstBlockList = new HashSet<>();
     
-    private final HashMultimap<BlockRecord,BlockRecord> pairBlockList = HashMultimap.create();
+    private final SetMultimap<BlockRecord,BlockRecord> pairBlockList = HashMultimap.create();
   
 	@Override
 	public ArrayList<String> listAllRules() {
