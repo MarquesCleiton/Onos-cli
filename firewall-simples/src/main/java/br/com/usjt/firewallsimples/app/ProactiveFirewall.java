@@ -57,15 +57,10 @@ public class ProactiveFirewall implements FirewallService{
     
     private final HashSet<BlockRecord> dstBlockList = new HashSet<>();
     
-    private final Multimap<BlockRecord, BlockRecord> pairBlockList;
-    
-    public ProactiveFirewall() {
-    	pairBlockList = HashMultimap.create();
-	}
   
 	@Override
 	public ArrayList<String> listAllRules() {
-		// TODO Auto-generated method stub
+		Multimap<BlockRecord, BlockRecord> pairBlockList = HashMultimap.create();
 		return null;
 	}
 
