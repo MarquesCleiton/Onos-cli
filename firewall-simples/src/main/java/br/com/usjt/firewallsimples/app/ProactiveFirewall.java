@@ -15,10 +15,60 @@
  */
 package br.com.usjt.firewallsimples.app;
 
+import java.util.ArrayList;
+
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
 
 @Component(immediate = true)
 @Service
-public class ProactiveFirewall {
+public class ProactiveFirewall implements FirewallService{
+
+	@Override
+	public ArrayList<String> listAllRules() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void fwAddSrcRule(String srcIp, String srcPort) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void fwAddDstRule(String dstIp, String dstPort) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void fwAddPairRule(String srcFlow, String dstFlow) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void fwRemoveSrcRule(String srcIp, String srcPort) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void fwRemoveDstRule(String dstIp, String dstPort) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void fwRemovePairRule(String srcFlow, String dstFlow) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void fwRemoveAllRule() {
+		// TODO Auto-generated method stub
+		
+	}
 }
