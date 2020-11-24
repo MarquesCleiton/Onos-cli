@@ -28,14 +28,10 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <onos.version>2.0.0</onos.version>
-        <!-- Uncomment to generate ONOS app from this module.
-        <onos.app.name>org.foo.app</onos.app.name>
-        <onos.app.title>Foo App</onos.app.title>
-        <onos.app.origin>Foo, Inc.</onos.app.origin>
+        <onos.app.name>br.com.usjt.firewallsimples</onos.app.name>
+        <onos.app.title>FireWall Simples App</onos.app.title>
+        <onos.app.origin>USJT, Inc.</onos.app.origin>
         <onos.app.category>default</onos.app.category>
-        <onos.app.url>http://onosproject.org</onos.app.url>
-        <onos.app.readme>ONOS OSGi bundle archetype.</onos.app.readme>
-        -->
     </properties>
 
     <dependencies>
@@ -92,6 +88,17 @@
             <scope>test</scope>
             <classifier>tests</classifier>
         </dependency>
+        
+        
+        
+        
+        
+        <dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.scr.annotations</artifactId>
+			<version>1.9.8</version>
+			<scope>provided</scope>
+		</dependency>
 
         <dependency>
             <groupId>org.osgi</groupId>
@@ -99,6 +106,23 @@
             <version>1.4.0</version>
             <scope>provided</scope>
         </dependency>
+        
+        		<dependency>
+			<groupId>org.apache.karaf.shell</groupId>
+			<artifactId>org.apache.karaf.shell.console</artifactId>
+			<version>3.0.5</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.onosproject</groupId>
+			<artifactId>onos-cli</artifactId>
+			<version>${onos.version}</version>
+		</dependency>
+		
+		
+		
+		
     </dependencies>
 
     <build>
