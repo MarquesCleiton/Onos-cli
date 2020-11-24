@@ -16,6 +16,9 @@
 package br.com.usjt.firewallsimples.app;
 
 import java.util.ArrayList;
+<<<<<<< HEAD
+
+=======
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
@@ -46,6 +49,7 @@ import org.slf4j.LoggerFactory;
 
 @Component(immediate = true)
 @Service
+>>>>>>> d4e06fa025c5d7275a412c6eb27f3aea5f316606
 public class ProactiveFirewall implements FirewallService{
 
 	@Override
